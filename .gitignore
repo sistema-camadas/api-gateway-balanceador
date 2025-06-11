@@ -6,6 +6,10 @@
 # dotenv files
 .env
 
+# Pastas de build
+bin/
+obj/
+
 # User-specific files
 *.rsuser
 *.suo

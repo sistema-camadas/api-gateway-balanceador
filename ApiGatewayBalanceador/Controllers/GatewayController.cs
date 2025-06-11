@@ -14,7 +14,6 @@ namespace ApiGatewayBalanceador.Controllers
         private readonly HttpClient _httpClient;
         private readonly LoadBalancer _loadBalancer;
 
-
         public GatewayController(IHttpClientFactory httpClientFactory, LoadBalancer serverPool)
         {
             _httpClient = httpClientFactory.CreateClient();
@@ -24,8 +23,8 @@ namespace ApiGatewayBalanceador.Controllers
         [HttpGet, HttpPost, HttpPut, HttpPatch, HttpDelete]
         public async Task<IActionResult> Proxy(string path) // Método que recebe todas as requisições
         {
-            var targetServer = _loadBalancer.GetNextServer(); // Obtém o próximo servidor do pool
-            var targetUrl = $"{targetServer}/{path}"; 
+            var targetServer = _loadBalancer.GetNextServer(); // Obtém o próximo servidor do Load Balancer
+            var targetUrl = $"{targetServer}/{path}";  
             var requestMessage = new HttpRequestMessage(new HttpMethod(Request.Method), targetUrl); 
 
             foreach (var header in Request.Headers)
@@ -56,9 +55,7 @@ namespace ApiGatewayBalanceador.Controllers
                 // Erro de conexão
                 return StatusCode(502, new { message = "Servidor indisponível", error = ex.Message });
             }
-
         }
-
     }
 }
 

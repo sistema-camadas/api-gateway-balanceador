@@ -13,13 +13,12 @@ namespace ApiGatewayBalanceador.Services
 
         public string GetNextServer()
         {
-            lock (_lock)
+            lock (_lock) 
             {
                 var server = _servers[_current]; // Obtém o servidor atual
                 _current = (_current + 1) % _servers.Count; // Avança para o próximo servidor
                 return server;
             }
         }
-
     }
 }
