@@ -24,8 +24,8 @@ namespace ApiGatewayBalanceador.Controllers
         public async Task<IActionResult> Proxy(string path) // Método que recebe todas as requisições
         {
             var targetServer = _loadBalancer.GetNextServer(); // Obtém o próximo servidor do Load Balancer
-            var targetUrl = $"{targetServer}/{path}";  
-            var requestMessage = new HttpRequestMessage(new HttpMethod(Request.Method), targetUrl); 
+            var targetUrl = $"{targetServer}/{path}";
+            var requestMessage = new HttpRequestMessage(new HttpMethod(Request.Method), targetUrl);
 
             foreach (var header in Request.Headers)
             {
@@ -57,6 +57,9 @@ namespace ApiGatewayBalanceador.Controllers
             }
         }
     }
+    
+    
+
 }
 
 

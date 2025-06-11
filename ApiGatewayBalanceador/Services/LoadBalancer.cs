@@ -4,8 +4,8 @@ namespace ApiGatewayBalanceador.Services
     {
         private readonly List<string> _servers = new()
         {
-            "http://localhost:8000",  // Server 1
-            "http://localhost:8001"   // Server 2
+            "http://localhost:8000",  // Main Server
+            "http://localhost:8001"   // Replica Server
         };
 
         private int _current = 0;
