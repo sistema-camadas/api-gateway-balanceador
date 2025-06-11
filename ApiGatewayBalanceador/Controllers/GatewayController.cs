@@ -14,10 +14,10 @@ namespace ApiGatewayBalanceador.Controllers
         private readonly HttpClient _httpClient;
         private readonly LoadBalancer _loadBalancer;
 
-        public GatewayController(IHttpClientFactory httpClientFactory, LoadBalancer serverPool)
+        public GatewayController(IHttpClientFactory httpClientFactory, LoadBalancer loadBalancer)
         {
             _httpClient = httpClientFactory.CreateClient();
-            _loadBalancer = serverPool;
+            _loadBalancer = loadBalancer;
         }
 
         [HttpGet, HttpPost, HttpPut, HttpPatch, HttpDelete]
@@ -58,7 +58,7 @@ namespace ApiGatewayBalanceador.Controllers
         }
     }
     
-    
+
 
 }
 
