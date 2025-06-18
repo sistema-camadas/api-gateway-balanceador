@@ -4,8 +4,8 @@ namespace ApiGatewayBalanceador.Services
     {
         private readonly List<string> _servers = new()
         {
-            "http://localhost:8000",  // Main Server
-            "http://localhost:8001"   // Replica Server
+            "http://server-main-4yoc.onrender.com",  // Main Server
+            "http://flask-server-replica.onrender.com"   // Replica Server
         };
 
         private int _current = 0;

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ApiGatewayBalanceador")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3073dbea338d979429a38747c3882a78c3a7dc5e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+337e1ac06ba76dda50f5aad3f479d5ae6f7d1c22")]
 [assembly: System.Reflection.AssemblyProductAttribute("ApiGatewayBalanceador")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ApiGatewayBalanceador")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
