@@ -16,7 +16,7 @@ namespace ApiGatewayBalanceador.Controllers
 
         public GatewayController(IHttpClientFactory httpClientFactory, LoadBalancer loadBalancer)
         {
-            _httpClient = httpClientFactory.CreateClient("Insecure");
+            _httpClient = httpClientFactory.CreateClient();
             _loadBalancer = loadBalancer;
         }
 
