@@ -1,11 +1,13 @@
+
+
 namespace ApiGatewayBalanceador.Services
 {
     public class LoadBalancer
     {
         private readonly List<string> _servers = new()
         {
-            "https://server-main-4yoc.onrender.com",  // Main Server
-            "https://flask-server-replica.onrender.com"   // Replica Server
+            Environment.GetEnvironmentVariable("SERVER-MAIN") ?? throw new Exception("SERVER-MAIN not set"),
+            Environment.GetEnvironmentVariable("SERVER-SECOND") ?? throw new Exception("SERVER-SECOND not set")
         };
 
         private int _current = 0;
@@ -13,7 +15,7 @@ namespace ApiGatewayBalanceador.Services
 
         public string GetNextServer()
         {
-            lock (_lock) 
+            lock (_lock)
             {
                 var server = _servers[_current]; // Obtém o servidor atual
                 _current = (_current + 1) % _servers.Count; // Avança para o próximo servidor
